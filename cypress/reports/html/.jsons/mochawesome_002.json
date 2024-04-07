@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-02-13T12:48:12.406Z",
+    "end": "2024-02-13T12:55:18.076Z",
+    "duration": 425670,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c1cab388-9492-4ba4-9059-ca30d186d7b5",
+      "title": "",
+      "fullFile": "cypress/e2e/criticalPath/e2eGuest.cy.ts",
+      "file": "cypress/e2e/criticalPath/e2eGuest.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7078b960-383b-4223-bedc-0e9db515283c",
+          "title": "e2e flow using registered user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Order creation as a Guest user",
+              "fullTitle": "e2e flow using registered user Order creation as a Guest user",
+              "timedOut": null,
+              "duration": 287634,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/e2eGuest.cy.ts/e2e flow using registered user -- Order creation as a Guest user (failed).png\"\n    ],\n    [],\n    [\n      \"/e2eGuest.cy.ts/e2e flow using registered user -- Order creation as a Guest user (failed) (attempt 2).png\"\n    ]\n  ]\n}",
+              "code": "var email = faker_1.faker.internet.email();\ncontext(\"Create order using card\", function () {\n    e2e_page_1.default.addProductToShippingPage();\n    e2e_page_1.default.checkoutGuestemail(email);\n    e2e_page_1.default.billingPage(email, \"United Kingdom\");\n    if (e2e_1.brand !== 'karenmillen.com') {\n        e2e_page_1.default.selectDate();\n    }\n    e2e_page_1.default.payUsingCard();\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: expected 'https://us1-dwstg.nastygal.com/gb/checkout?step=shipping' to include 'billing'",
+                "estack": "AssertionError: Timed out retrying after 10000ms: expected 'https://us1-dwstg.nastygal.com/gb/checkout?step=shipping' to include 'billing'\n    at Object.waitPageToLoad (webpack:///../../../cypress/pom/billing.page.ts:485:15)\n    at e2ePage.billingPage (webpack:///../../../cypress/pom/e2e.page.ts:458:24)\n    at Suite.eval (webpack:///../../../cypress/e2e/criticalPath/e2eGuest.cy.ts:17:14)\n    at Context.eval (webpack:///../../../cypress/e2e/criticalPath/e2eGuest.cy.ts:14:4)",
+                "diff": null
+              },
+              "uuid": "8c7b0e9d-8b58-49fb-af7e-64655a4c4e44",
+              "parentUUID": "7078b960-383b-4223-bedc-0e9db515283c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8c7b0e9d-8b58-49fb-af7e-64655a4c4e44"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 287634,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "cypressParallel": "true",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

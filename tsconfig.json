@@ -1,0 +1,25 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node",
+      "cypress-iframe"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "files": [
+    "index.d.ts"
+  ]
+}

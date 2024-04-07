@@ -1,0 +1,13 @@
+{
+  "jsonDir": "/Users/muneeb.akhtar/Documents/BoohooWeb_DynamicFramework/webappautomation/cypress/reports/html/.jsons",
+  "reporterOptions": {
+    "cypressParallel": true,
+    "reportDir": "/Users/muneeb.akhtar/Documents/BoohooWeb_DynamicFramework/webappautomation/cypress/reports/html",
+    "overwrite": false
+  },
+  "screenshotsDir": "/Users/muneeb.akhtar/Documents/BoohooWeb_DynamicFramework/webappautomation/cypress/screenshots",
+  "videosFolder": "/Users/muneeb.akhtar/Documents/BoohooWeb_DynamicFramework/webappautomation/cypress/videos",
+  "outputDir": "/Users/muneeb.akhtar/Documents/BoohooWeb_DynamicFramework/webappautomation/cypress/reports/html",
+  "configOutput": "cypress/.tmp/cypressMochawesomeReporterConfig.json",
+  "removeJsonsFolderAfterMerge": false
+}

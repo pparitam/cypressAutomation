@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-21T14:33:22.963Z",
+    "end": "2024-02-21T14:36:48.623Z",
+    "duration": 205660,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "239b1c9f-f1de-4773-b01b-20d62f29e5a8",
+      "title": "",
+      "fullFile": "cypress/e2e/criticalPath/e2e.cy.ts",
+      "file": "cypress/e2e/criticalPath/e2e.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ae502a4-d16e-43a1-9511-c75bafea3be5",
+          "title": "e2e flow using registered user",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Order creation as a Registered user",
+              "fullTitle": "e2e flow using registered user Order creation as a Registered user",
+              "timedOut": null,
+              "duration": 193219,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var email = faker_1.faker.internet.email();\nvar password = faker_1.faker.internet.password({ length: 20, pattern: /^[a-zA-Z0-9_.-@]/ });\nvar firstName = faker_1.faker.person.firstName();\nvar lastname = faker_1.faker.person.lastName();\n// Register with random Email\ncontext(\"Registration\", function () {\n    login_page_1.default.click.loginIcon();\n    home_page_1.default.click.registrationButton();\n    registration_page_1.default.actions.startRegistration(email);\n    if (!common_1.isSiteGenesisBrand) {\n        registration_page_1.default.actions.confirmationCheckbox();\n        registration_page_1.default.assertions.assertCheckboxIsChecked();\n    }\n    registration_page_1.default.actions.enterNewUserData(password, password, firstName, lastname);\n    registration_page_1.default.actions.chooseDate('23', assertionText_1.default.DOBmonth[e2e_1.language], '1989');\n    registration_page_1.default.click.chooseEmailConsent();\n    if (e2e_1.brand == 'boohooman.com') {\n        var primaryAddress = addresses_1.default.getAddressByLocale(e2e_1.locale, 'primaryAddress');\n        shipping_page_1.default.actions.phoneNumberField(primaryAddress.phone);\n        shipping_page_1.default.click.addAddressManually();\n        shipping_page_1.default.actions.adressLine1(primaryAddress.addressLine);\n        shipping_page_1.default.actions.cityField(primaryAddress.city);\n        shipping_page_1.default.actions.countyField(primaryAddress.county);\n        shipping_page_1.default.actions.postcodeField(primaryAddress.postcode);\n    }\n    registration_page_1.default.click.submitButton();\n    registration_page_1.default.assertions.assertMyAcountPageIsOpened();\n});\ncontext(\"Search and add product to the Cart\", function () {\n    e2e_page_1.default.addProductToShippingPage();\n    if (e2e_1.brand != 'boohooman.com') {\n        e2e_page_1.default.billingPage(email, \"United Kingdom\");\n    }\n    e2e_page_1.default.payUsingCard();\n});\ncontext(\"Search and add product to the Cart\", function () {\n    if (e2e_1.brand == 'boohoo.com' && e2e_1.locale !== 'AU') { //TODO : Remove condition for locale once paypal dev env issue sorted\n        e2e_page_1.default.addProductToShippingPage();\n        e2e_page_1.default.billingPage(email, \"United Kingdom\");\n        e2e_page_1.default.payUsingPaypal();\n    }\n});",
+              "err": {},
+              "uuid": "077f2ec6-dc0b-4d2d-bbab-8d7bdad458d8",
+              "parentUUID": "8ae502a4-d16e-43a1-9511-c75bafea3be5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "077f2ec6-dc0b-4d2d-bbab-8d7bdad458d8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 193219,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "cypressParallel": "true",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
