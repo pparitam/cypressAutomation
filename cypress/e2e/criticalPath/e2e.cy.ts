@@ -13,7 +13,7 @@ if (locale !== 'IL') {  //TODO : Remove this condition when it swich on
   describe('e2e flow using registered user', () => {
 
     beforeEach(() => {
-      e2ePage.goto();
+      //e2ePage.goto();
     })
     it("Order creation as a Registered user", () => {
       const email = faker.internet.email();
@@ -21,6 +21,9 @@ if (locale !== 'IL') {  //TODO : Remove this condition when it swich on
       const firstName = faker.person.firstName();
       const lastname = faker.person.lastName();
       // Register with random Email
+      context("Visit homepage", () => {
+        e2ePage.goto();
+      })
       context("Registration", () => {
         LoginPage.click.loginIcon();
         HomePage.click.registrationButton();

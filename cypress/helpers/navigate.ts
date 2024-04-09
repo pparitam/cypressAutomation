@@ -210,20 +210,6 @@ class Navigate {
     cy.visit(url + '/myaccount');
   }
 
-  // NAVIGATE TO PAGES USING SPLIT SHIPPING SKU
-  toShippingPageWithSplitShippingSku() {
-    cy.log('I am on shipping page with split shipping SKU');
-
-    // To be completed
-
-  }
-
-  toOrderConfirmationPageWithSplitShippingSku() {
-    cy.log('I am on order confirmation page with split shipping SKU');
-
-    // To be completed
-  }
-
   clearSessionCookies() {
     cy.clearCookies();
   }
