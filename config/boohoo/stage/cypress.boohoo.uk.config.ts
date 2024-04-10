@@ -1,7 +1,7 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-  projectId: 'i6d3n8',
+  projectId: "41co4q",
   env: {
     url: 'https://storefront:Oreo2022@uk-dwstg.boohoo.com/',
     sku: 'TZZ97642',
