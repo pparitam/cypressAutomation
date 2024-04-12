@@ -130,7 +130,7 @@
         "cy:run:nastygal:uk": "cypress run --config-file ./config/nastygal/stage/cypress.nastygal.uk.config.ts",
         "cy:run:nastygal:us": "cypress run --config-file ./config/nastygal/stage/cypress.nastygal.us.config.ts",    
       "//": "CYPRESS PARALLEL RUN STAGE",
-        "cy:parallel:boohoo": "cypress-parallel -s cy:run:boohoo -t 2 -d 'cypress/e2e/criticalPath/.' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
+        "cy:parallel:boohoo": "cypress-parallel -s cy:run:boohoo:uk -t 2 -d 'cypress/e2e/criticalPath/*.*' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
         "cy:parallel:nastygal": "cypress-parallel -s cy:run:nastygal -t 2 -d 'cypress/e2e/criticalPath/.' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
         "cy:parallel:karenmillen": "cypress-parallel -s cy:run:karenmillen -t 2 -d 'cypress/e2e/criticalPath/.' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",
         "cy:parallel:boohooman": "cypress-parallel -s cy:run:boohooman -t 4 -d 'cypress/e2e/criticalPath/.' -r 'cypress-mochawesome-reporter' -o 'cypressParallel=true'",

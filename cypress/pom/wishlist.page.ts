@@ -79,27 +79,27 @@ class WishListPage implements AbstractPage {
   }
 
   click = {
-    sortItems () {
+    sortItems (): void {
       const sortItems = selectors[variables.brand].sortItems;
       cy.get(sortItems);
     },
-    sortByDateAddedFromNew () {
+    sortByDateAddedFromNew (): void {
       const sortByDateAddedFromNew = selectors[variables.brand].sortByDateAddedFromNew;
       cy.get(sortByDateAddedFromNew);
     },
-    sortByDateAddedFromOld () {
+    sortByDateAddedFromOld (): void {
       const sortByDateAddedFromOld = selectors[variables.brand].sortByDateAddedFromOld;
       cy.get(sortByDateAddedFromOld);
     },
-    sortByPriceFromLowToHigh () {
+    sortByPriceFromLowToHigh (): void {
       const sortByPriceFromLowToHigh = selectors[variables.brand].sortByPriceFromLowToHigh;
       cy.get(sortByPriceFromLowToHigh);
     },
-    sortByPriceFromHighToLow () {
+    sortByPriceFromHighToLow (): void {
       const sortByPriceFromHighToLow = selectors[variables.brand].sortByPriceFromHighToLow;
       cy.get(sortByPriceFromHighToLow);
     },
-    addToCart () {
+    addToCart (): void {
       const addToCart = selectors[variables.brand].addToCart;
       cy.get(addToCart).eq(0).click({ force: true });
     },
@@ -113,7 +113,7 @@ class WishListPage implements AbstractPage {
         }
       });
     },   
-    removeAllItemsFromWishlist () {
+    removeAllItemsFromWishlist () : void {
       const removeItemFromWishlist = selectors[variables.brand].removeItemFromWishlist;
       const removeItemFromWishListMobile = selectors[variables.brand].removeItemFromWishlistMobile;
       const confirmRemoveWishlistItem = selectors[variables.brand].confirmRemoveWishlistItem;
@@ -135,7 +135,7 @@ class WishListPage implements AbstractPage {
       }
     },
     
-    wishlistLoginBtn () {
+    wishlistLoginBtn (): void {
       const wishlistLoginBtn = selectors[variables.brand].wishlistLoginBtn;
       cy.get(wishlistLoginBtn).eq(0).click();
     }
@@ -145,7 +145,7 @@ class WishListPage implements AbstractPage {
   actions = {
   };
   assertions = {
-    assertItemIsAddedToWishlist () {
+    assertItemIsAddedToWishlist (): void {
       cy.reload();
       const itemIsAddedToWishlist = selectors[variables.brand].itemIsAddedToWishlist;
       cy.waitUntil(() => {
@@ -154,7 +154,7 @@ class WishListPage implements AbstractPage {
       cy.get(itemIsAddedToWishlist)
         .parent().invoke('attr', 'style', 'display: block');
     },
-    assertWishListIsEmpty (msg: string) {
+    assertWishListIsEmpty (msg: string) : void{
       const wishListIsEmpty = selectors[variables.brand].wishListIsEmpty;
       cy.get(wishListIsEmpty)
         .parent().invoke('attr', 'style', 'display: block');
